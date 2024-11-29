@@ -1,9 +1,15 @@
 #!/bin/csh -f
 
-set name=llpeak
-find ./DerivedData -type f -name ${name} -perm +444 -ls 
+set app=llpeak
+xcodebuild -list -project $app.xcodeproj
 
-set src=Release
-echo
-ls -al ./DerivedData/llpeak/Build/Products/${src}/${name}
-cp ./DerivedData/llpeak/Build/Products/${src}/${name} /usr/local/opt/
+# rm -rf DerivedData/
+xcodebuild -scheme $app -configuration Release clean build
+# xcodebuild -configuration Release -alltargets clean
+
+find ./DerivedData -type f -name $app -perm +111 -ls
+set src=./DerivedData/Build/Products/Release/$app
+
+echo "File ß$src"
+ls -al $src
+cp $src ~/opt/bin/
