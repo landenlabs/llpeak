@@ -1,0 +1,149 @@
+{
+    // Temperature config - v2
+    // https://ssds-catalogui-useast1.qa.ssds.weather.com/v2/catalogui/tilepaletter/palettes/temp
+    "in-palette" : {
+        "transparent" : "0,0,0,0",
+           
+        "rain-1" : "99,235,99",       //  1  green
+        "rain-2" : "60,198,60",      //  2  green
+        "rain-3" : "28,157,52",      //  3  green
+        "rain-4" : "14,104,26",      //  4  FColor
+        "rain-5" : "0,63,0",         //  5  green
+    
+        "rain-6" : "251,235,2",      //  6  yellow
+        "rain-7" : "238,109,2",      //  7  orange
+    
+        "rain-8" : "210,11,6",       //  8  red
+        "rain-9" : "189,8,4",        //  9  red
+        "rain-10" : "169,5,3",       // 10  red
+        "rain-11" : "148,2,1",       // 11  red
+        "rain-12" : "128,0,0",       // 12  red
+
+        // Freeze
+        "freeze-1" : "188,165,240",    // purple
+        "freeze-3" : "161,137,214",    // purple
+        "freeze-6" : "130,104,186",    // purple
+        "freeze-9" : "98,70,155",      // purple
+        "freeze-12" : "82,53,140",     // purple
+    
+        // Mixed
+        "mixed-1" : "255,160,207",    // red
+        "mixed-3" : "224,120,172",    // red
+        "mixed-6" : "192,77,134",     // red
+        "mixed-9" : "155,25,90",      // red
+        "mixed-12" : "146,13,79",     // red
+        
+        // Snow
+        "snow-1" : "138,248,255",    // blue
+        "snow-3" : "96,181,191",     // blue
+        "snow-6" : "40,93,106",      // blue
+        "snow-9" : "13,49,64",       // blue
+        "snow-12" : "13,49,64",      // blue
+
+        "black" : "0,0,0,255",
+        "white" : "255,255,255,255"
+    },
+    "out-palette" : {
+        "transparent" : "0,0,0,0",
+           
+        "rain-1" : "99,235,99",       //  1  green
+        "rain-2" : "60,198,60",      //  2  green
+        "rain-3" : "28,157,52",      //  3  green
+        "rain-4" : "14,104,26",      //  4  FColor
+        "rain-5" : "0,63,0",         //  5  green
+    
+        "rain-6" : "251,235,2",      //  6  yellow
+        "rain-7" : "238,109,2",      //  7  orange
+    
+        "rain-8" : "210,11,6",       //  8  red
+        "rain-9" : "189,8,4",        //  9  red
+        "rain-10" : "169,5,3",       // 10  red
+        "rain-11" : "148,2,1",       // 11  red
+        "rain-12" : "128,0,0",       // 12  red
+
+        // Freeze
+        "freeze-1" : "188,165,240",    // purple
+        "freeze-4" : "161,137,214",    // purple
+        "freeze-6" : "130,104,186",    // purple
+        "freeze-8" : "98,70,155",      // purple
+        "freeze-10" : "82,53,140",     // purple
+    
+        // Mixed
+        "mixed-1" : "255,160,207",    // red
+        "mixed-4" : "224,120,172",    // red
+        "mixed-6" : "192,77,134",     // red
+        "mixed-8" : "155,25,90",      // red
+        "mixed-10" : "146,13,79",     // red
+        
+        // Snow
+        "snow-1" : "138,248,255",    // blue
+        "snow-4" : "96,181,191",     // blue
+        "snow-6" : "40,93,106",      // blue
+        "snow-8" : "13,49,64",       // blue
+        "snow-10" : "13,49,64",      // blue
+
+        "black" : "0,0,0,0",
+        "white" : "1,1,1,0"
+    },
+    "overlay-palette" : {
+        "transparent" : "0,0,0,0",
+           
+        "rain-1" : "0,0,0,0",       //  1  green
+        "rain-2" : "0,0,0,0",       //  2  green
+        "rain-3" : "0,0,0,0",       //  3  green
+        "rain-4" : "0,0,0,0",       //  4  FColor
+        "rain-5" : "0,0,0,0",       //  5  green
+    
+        "rain-6" : "darken1",       //  6  yellow
+        "rain-7" : "darken1",       //  7  orange
+    
+        "rain-8" : "darken2",       //  8  red
+        "rain-9" : "darken2",       //  9  red
+        "rain-10" : "darken2",      // 10  red
+        "rain-11" : "darken2",      // 11  red
+        "rain-12" : "darken2",      // 12  red
+
+        // Freeze
+        "freeze-1" : "0,0,0,0",     // purple
+        "freeze-4" : "0,0,0,0",     // purple
+        "freeze-6" : "darken1",     // purple
+        "freeze-8" : "darken2",     // purple
+        "freeze-10" : "darken2",    // purple
+    
+        // Mixed
+        "mixed-1" : "0,0,0,0",      // red
+        "mixed-4" : "0,0,0,0",      // red
+        "mixed-6" : "darken1",      // red
+        "mixed-8" : "darken2",      // red
+        "mixed-10" : "darken2",     // red
+        
+        // Snow
+        "snow-1" : "0,0,0,0",       // blue
+        "snow-4" : "0,0,0,0",       // blue
+        "snow-6" : "darken1",       // blue
+        "snow-8" : "darken2",       // blue
+        "snow-10" : "darken2",      // blue
+
+        "black" : "0,0,0,0",
+        "white" : "1,1,1,0"
+    },
+    "overlay-filters" : {
+        "darken1" : {
+            "start-alpha" : 90,
+            "end-alpha" : 0,
+            "rate": 90
+        },
+        "darken2" : {
+            "start-alpha" : 100,
+            "end-alpha" : 0,
+            "rate": 90
+        }
+    },
+    "overlay" : {
+        "alpha-multiple" : 99.0,
+        "alpha-minimum": 20
+    },
+    "bottom" : {
+        "rgba" : "128,128,128,32"
+    }
+}

@@ -1,0 +1,66 @@
+{
+    // WindSpeed config
+    // https://ssds-catalogui-useast1.qa.ssds.weather.com/v2/catalogui/tilepaletter/palettes/windspeed
+    "in-palette" : {
+        "transparent" : "0,0,0,0",  // Red,Green,Blue[Alpha]  0..255
+           
+        "wind-10" : "70,210,255",        
+        "wind-15" : "65,190,255",  
+        "wind-20" : "25,120,255",  
+        "wind-25" : "0,70,190",  
+        "wind-30" : "0,50,170",  
+        "wind-35" : "0,25,130",  
+        "wind-40" : "0,0,90",  
+        "wind-45" : "50,5,120",  
+        "wind-50" : "100,15,150",  
+        "wind-55" : "130,5,125",  
+        "wind-60" : "165,0,100",  
+        "wind-65" : "165,0,100",  
+        "wind-70" : "165,0,100",  
+        "wind-75" : "165,0,100", 
+        "wind-80" : "165,0,100", 
+        "wind-85" : "165,0,100", 
+        "wind-90" : "165,0,100", 
+
+        "black" : "0,0,0,255",
+        "white" : "255,255,255,255"
+    },
+    "overlay-palette" : {
+        "transparent" : "0,0,0,0",  // Red,Green,Blue[Alpha]  0..255
+     
+        "wind-10" : "70,210,255",        
+        "wind-15" : "65,190,255",  
+        "wind-20" : "25,120,255",  
+        "wind-25" : "0,70,190",  
+        "wind-30" : "0,50,170",  
+        "wind-35" : "0,25,130",  
+        "wind-40" : "darken1",  
+        "wind-45" : "darken1",  
+        "wind-50" : "darken1",  
+        "wind-55" : "darken1",  
+        "wind-60" : "darken1",  
+        "wind-65" : "darken1",  
+        "wind-70" : "darken2",  
+        "wind-75" : "darken2", 
+        "wind-80" : "darken2", 
+        "wind-85" : "darken2", 
+        "wind-90" : "darken2", 
+
+        "black" : "0,0,0,0",
+        "white" : "0,0,0,0"
+    },
+    "overlay-filters" : {
+        "darken1" : {
+            "rate" : 90,    // darken rate 0..100, 100=no change
+            "alpha": 80     // alpha 0..100 percent
+        },
+        "darken2" : {
+            "rate" : 80,
+            "alpha": 100
+        }
+    },
+    "overlay" : {
+        "alpha-multiple" : 95.0,
+        "alpha-minimum": 20
+    }
+}

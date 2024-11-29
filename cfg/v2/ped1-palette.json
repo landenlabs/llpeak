@@ -1,0 +1,28 @@
+{
+    // Pedestrian crossing
+    "in-palette" : {
+        "transparent" : "0,0,0,0"
+    },
+    "out-palette" : {
+        "transparent" : "0,0,0,0"
+    },
+    "overlay-palette" : {
+        "transparent" : "0,0,0,0"
+    },
+    "overlay-selection" : {
+        "transparent" : "0,0,0,0"
+    },
+    "overlay-filters" : {
+        "darken1" : {
+            "rate" : 90,
+            "alpha": 100
+        }
+    },
+    "overlay" : {
+        "alpha-multiple" : 99.5,
+        "alpha-minimum": 20
+    },
+    "bottom" : {
+        "rgba" : "128,128,128,0"
+    }
+}
