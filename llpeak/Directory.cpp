@@ -29,8 +29,7 @@
 // IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN
 // CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-
-#include "Directory.hpp"
+#include "directory.hpp"
 
 #include <iostream>
 #include <errno.h>
@@ -52,7 +51,7 @@ inline static bool isDir(DWORD attr) {
 
 //-------------------------------------------------------------------------------------------------
 // Return 'clean' full path, remove extra slahes.
-static lstring &GetFullPath(lstring &fname) {
+static lstring& GetFullPath(lstring& fname) {
     char fullPath[MAX_PATH];
     DWORD len1 = GetFullPathName(fname, ARRAYSIZE(fullPath), fullPath, NULL);
     fname = fullPath;
@@ -60,9 +59,9 @@ static lstring &GetFullPath(lstring &fname) {
 }
 
 //-------------------------------------------------------------------------------------------------
-Directory_files::Directory_files(const lstring &dirName) : 
-        my_dir_hnd(INVALID_HANDLE_VALUE),
-        my_dirName(dirName) {
+Directory_files::Directory_files(const lstring& dirName) :
+    my_dir_hnd(INVALID_HANDLE_VALUE),
+    my_dirName(dirName) {
 }
 
 //-------------------------------------------------------------------------------------------------
@@ -85,15 +84,12 @@ bool Directory_files::begin() {
 
     lstring dir = my_dirName;
     if (dir.empty())
-        dir = ".";  // Default to current directory
+        dir = ".";    // Default to current directory
 
     DWORD attr = GetFileAttributes(dir);
-    int err = GetLastError();  // Error 3 = invalid path.
-
     if (isDir(attr)) {
         dir += ANY;
-    } else  // if (attr != INVALID_FILE_ATTRIBUTES)
-    {
+    } else { // if (attr != INVALID_FILE_ATTRIBUTES)
         GetFullPath(my_dirName);
         // Peel off one subdir from reference name.
         size_t pos = my_dirName.find_last_of(":/\\");
@@ -104,7 +100,9 @@ bool Directory_files::begin() {
     my_dir_hnd = FindFirstFile(dir, &my_dirent);
     bool is_more = (my_dir_hnd != INVALID_HANDLE_VALUE);
 
-    while (is_more && (isDir(my_dirent.dwFileAttributes) && strspn(my_dirent.cFileName, ".") == strlen(my_dirent.cFileName))) {
+    while (is_more
+        && (isDir(my_dirent.dwFileAttributes)
+        && strspn(my_dirent.cFileName, ".") == strlen(my_dirent.cFileName) )) {
         is_more = (FindNextFile(my_dir_hnd, &my_dirent) != 0);
     }
 
@@ -122,7 +120,9 @@ bool Directory_files::more() {
         //   skip any dot-directories.
         do {
             is_more = (FindNextFile(my_dir_hnd, &my_dirent) != 0);
-        } while (is_more && (isDir(my_dirent.dwFileAttributes) && strspn(my_dirent.cFileName, ".") == strlen(my_dirent.cFileName)));
+        } while (is_more
+            && (isDir(my_dirent.dwFileAttributes)
+            && strspn(my_dirent.cFileName, ".") == strlen(my_dirent.cFileName)));
     }
 
     return is_more;
@@ -134,12 +134,12 @@ bool Directory_files::is_directory() const {
 }
 
 //-------------------------------------------------------------------------------------------------
-const char *Directory_files::name() const {
+const char* Directory_files::name() const {
     return (my_dir_hnd != INVALID_HANDLE_VALUE) ? my_dirent.cFileName : NULL;
 }
 
 //-------------------------------------------------------------------------------------------------
-lstring &Directory_files::fullName(lstring &fname) const {
+lstring& Directory_files::fullName(lstring& fname) const {
     fname = my_dirName + SLASH + name();
     return GetFullPath(fname);
 }
@@ -158,7 +158,7 @@ bool Directory_files::exists(const char *path) {
 lstring Directory_files::SLASH = "/";
 
 //-------------------------------------------------------------------------------------------------
-Directory_files::Directory_files(const lstring &dirName) {
+Directory_files::Directory_files(const lstring& dirName) {
     realpath(dirName.c_str(), my_fullname);
     my_baseDir = my_fullname;
     my_pDir = opendir(my_baseDir);
@@ -179,7 +179,7 @@ bool Directory_files::more() {
         if (my_is_more) {
             if (my_pDirEnt->d_type == DT_DIR) {
                 while (my_is_more &&
-                       (my_pDirEnt->d_name[0] == '.' && !isalnum(my_pDirEnt->d_name[1]))) {
+                (my_pDirEnt->d_name[0] == '.' && ! isalnum(my_pDirEnt->d_name[1]))) {
                     more();
                 }
             }
@@ -195,7 +195,7 @@ bool Directory_files::is_directory() const {
 }
 
 //-------------------------------------------------------------------------------------------------
-lstring &Directory_files::fullName(lstring &fname) const {
+lstring& Directory_files::fullName(lstring& fname) const {
     return join(fname, my_baseDir, my_pDirEnt->d_name);
 }
 
@@ -206,7 +206,8 @@ bool Directory_files::exists(const char *path) {
 #endif
 
 //-------------------------------------------------------------------------------------------------
-lstring &Directory_files::join(lstring &outFull, const char *dir, const char *name) {
+lstring& Directory_files::join(lstring& outFull, const char* dir, const char* name) {
+
     outFull = dir;
     outFull += SLASH + name;
     // return realpath(fname.c_str(), my_fullname);

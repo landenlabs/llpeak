@@ -3,8 +3,8 @@
 // Desc: This class is used to obtain the names of files in a directory.  
 //
 // Usage::
-//      Create a Directory_files object by providing the name of the directory 
-//      to use.  'next_file_name()' returns the next file name found in the 
+//      Create a Directory_files object by providing the name of the directory
+//      to use.  'next_file_name()' returns the next file name found in the
 //      directory, if any.  You MUST check for the existance of more files
 //      by using 'more_files()' between each call to "next_file_name()",
 //      it tells you if there are more files AND sequences you to the next
@@ -48,8 +48,6 @@
 #pragma once
 
 #include "ll_stdhdr.hpp"
-#include <stdio.h>
-
 #ifdef HAVE_WIN
   #include <windows.h>
 #else
@@ -79,8 +77,7 @@ const DWORD FILE_ATTRIBUTE_EXEC = S_IXUSR; // has execute permission
 class DirEntry;
 typedef void* HANDLE;
 
-class Directory_files
-{
+class Directory_files {
 public:
     Directory_files(const lstring& dirName);
     ~Directory_files();
@@ -102,7 +99,7 @@ public:
 
     // Close current directory
     void close();
-    
+
     // Utility to join directory and name
     static lstring& join(lstring& outPath, const char* inDir, const char* inName);
 
@@ -111,14 +108,14 @@ public:
     
     static lstring SLASH;  // "/" linux, or "\" windows
 
-    
+
 private:
-    Directory_files(const Directory_files &);
-    Directory_files &operator=(const Directory_files &);
-    
+    Directory_files(const Directory_files&);
+    Directory_files& operator=(const Directory_files&);
+
 #ifdef HAVE_WIN
     WIN32_FIND_DATA my_dirent;      // Data structure describes the file found
-    
+
     HANDLE      my_dir_hnd;     // Search handle returned by FindFirstFile
     lstring     my_dirName;     // Directory name
 #else
@@ -182,7 +179,6 @@ lstring& removeExtn(lstring& outName, const lstring& inPath)
 }
 
 //-------------------------------------------------------------------------------------------------
-// TODO - move to directory.h
 inline
 size_t fileLength(const lstring& path) {
     struct stat info;
