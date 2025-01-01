@@ -411,7 +411,9 @@
 		B9B44DC51D8F65CD00782398 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7Z43FGG83;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"/usr/local/Cellar/imagemagick/7.1.0-26/include/ImageMagick-7",
 					/Users/ldennis/opt/FreeImage/Dist,
@@ -439,14 +441,18 @@
 					"-DMAGICKCORE_HDRI_ENABLE=1",
 					"-DMAGICKCORE_QUANTUM_DEPTH=16",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landenlabs.llpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		B9B44DC61D8F65CD00782398 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = X7Z43FGG83;
 				"HEADER_SEARCH_PATHS[arch=*]" = (
 					"/usr/local/Cellar/imagemagick/7.1.0-26/include/ImageMagick-7",
 					/Users/ldennis/opt/FreeImage/Dist,
@@ -474,7 +480,9 @@
 					"-DMAGICKCORE_HDRI_ENABLE=1",
 					"-DMAGICKCORE_QUANTUM_DEPTH=16",
 				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.landenlabs.llpeak;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

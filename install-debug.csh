@@ -1,16 +1,25 @@
 #!/bin/csh -f
 
 set app=llpeak
-xcodebuild -list -project $app.xcodeproj
+set dstdir=~/opt/bin
 
+# xcodebuild -list -project $app.xcodeproj
 # rm -rf DerivedData/
-xcodebuild -scheme $app -configuration Debug clean build
 # xcodebuild -configuration Release -alltargets clean
+xcodebuild -scheme $app -configuration Debug clean build
+if ($status != 0) then
+  say -v karen "Failed to build $app"
+  exit -1
+endif
 
-
-find ./DerivedData -type f -name $app -perm +111 -ls
+# echo -------------------
+# find ./DerivedData -type f -name $app -perm +111 -ls
 set src=./DerivedData/Build/Products/Debug/$app
 
-echo "File ß$src"
-ls -al $src
-cp $src ~/opt/bin/
+echo
+echo "---Install $src"
+cp $src ${dstdir}/
+
+echo
+echo "---Files "
+ls -al $src  ${dstdir}/$app

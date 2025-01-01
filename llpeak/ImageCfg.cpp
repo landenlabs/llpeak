@@ -229,7 +229,7 @@ bool ImageCfg::parseConfig(const lstring& cfgName) {
     ofstream out;
  
     lstring cfgFilename = cfgName;
-    ReplaceAll(cfgFilename, "~", getHomeDir()); // Convert ~ to home directory.
+    cfgFilename.replaceStr( "~", getHomeDir()); // Convert ~ to home directory.
     
     isValid = false;
     try {

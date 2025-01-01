@@ -679,9 +679,9 @@ bool ImageUtilF::BlendFade(const lstring& fullname, unsigned extraFrames, ImageC
         lstring outFname;
         FileUtil::getName(outFname, fullPath);
         lstring extn;
-        getExtn(extn, outFname);
+        DirUtil::getExt(extn, outFname);
         lstring fname;
-        removeExtn(fname, outFname);
+        DirUtil::removeExtn(fname, outFname);
         
         unsigned bitsPerPixel = imgI8.GetBitsPerPixel();
         if (bitsPerPixel != 8) {
@@ -1013,9 +1013,9 @@ void ImageUtilF::ColorlapseI8(const lstring& fullPath, ImageCfg& cfg, ImageAux& 
     lstring nameExtn;
     FileUtil::getName(nameExtn, fullPath);
     lstring extn;
-    getExtn(extn, nameExtn);
+    DirUtil::getExt(extn, nameExtn);
     lstring justname;
-    removeExtn(justname, nameExtn);
+    DirUtil::removeExtn(justname, nameExtn);
     char outName[256];
     
     FPalette srcPalette;
