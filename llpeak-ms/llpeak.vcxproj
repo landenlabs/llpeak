@@ -19,23 +19,62 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\llpeak\commands.cpp" />
+    <ClCompile Include="..\llpeak\cmdblendf.cpp" />
+    <ClCompile Include="..\llpeak\cmdblurf.cpp" />
+    <ClCompile Include="..\llpeak\cmdcolorlapsef.cpp" />
+    <ClCompile Include="..\llpeak\cmddumpf.cpp" />
+    <ClCompile Include="..\llpeak\cmdmontagef.cpp" />
+    <ClCompile Include="..\llpeak\cmdshadef.cpp" />
+    <ClCompile Include="..\llpeak\cmdtograyf.cpp" />
     <ClCompile Include="..\llpeak\directory.cpp" />
-    <ClCompile Include="..\llpeak\hash.cpp" />
+    <ClCompile Include="..\llpeak\fblur.cpp" />
+    <ClCompile Include="..\llpeak\fcolor.cpp" />
+    <ClCompile Include="..\llpeak\fdraw.cpp" />
+    <ClCompile Include="..\llpeak\fileutil.cpp" />
+    <ClCompile Include="..\llpeak\fimage.cpp" />
+    <ClCompile Include="..\llpeak\fpalette.cpp" />
+    <ClCompile Include="..\llpeak\fprint.cpp" />
+    <ClCompile Include="..\llpeak\fshade.cpp" />
+    <ClCompile Include="..\llpeak\imageaux.cpp" />
+    <ClCompile Include="..\llpeak\imagecfg.cpp" />
+    <ClCompile Include="..\llpeak\imageutilf.cpp" />
+    <ClCompile Include="..\llpeak\imageutilm.cpp" />
+    <ClCompile Include="..\llpeak\json.cpp" />
     <ClCompile Include="..\llpeak\llpeak.cpp" />
-    <ClCompile Include="..\llpeak\md5.cpp" />
+    <ClCompile Include="..\llpeak\ringbuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\llpeak\colors.h" />
-    <ClInclude Include="..\llpeak\commands.h" />
-    <ClInclude Include="..\llpeak\directory.h" />
-    <ClInclude Include="..\llpeak\hash.h" />
-    <ClInclude Include="..\llpeak\json.h" />
-    <ClInclude Include="..\llpeak\ll_stdhdr.h" />
-    <ClInclude Include="..\llpeak\lstring.h" />
-    <ClInclude Include="..\llpeak\md5.h" />
-    <ClInclude Include="..\llpeak\split.h" />
-    <ClInclude Include="..\llpeak\SwapStream.h" />
+    <ClInclude Include="..\llpeak\cmdblendf.hpp" />
+    <ClInclude Include="..\llpeak\cmdblurf.hpp" />
+    <ClInclude Include="..\llpeak\cmdcolorlapsef.hpp" />
+    <ClInclude Include="..\llpeak\cmddumpf.hpp" />
+    <ClInclude Include="..\llpeak\cmdmontagef.hpp" />
+    <ClInclude Include="..\llpeak\cmdshadef.hpp" />
+    <ClInclude Include="..\llpeak\cmdtograyf.hpp" />
+    <ClInclude Include="..\llpeak\command.hpp" />
+    <ClInclude Include="..\llpeak\directory.hpp" />
+    <ClInclude Include="..\llpeak\fblur.hpp" />
+    <ClInclude Include="..\llpeak\fbrush.hpp" />
+    <ClInclude Include="..\llpeak\fcolor.hpp" />
+    <ClInclude Include="..\llpeak\fdraw.hpp" />
+    <ClInclude Include="..\llpeak\fileutil.hpp" />
+    <ClInclude Include="..\llpeak\fimage.hpp" />
+    <ClInclude Include="..\llpeak\fpalette.hpp" />
+    <ClInclude Include="..\llpeak\fprint.hpp" />
+    <ClInclude Include="..\llpeak\fshade.hpp" />
+    <ClInclude Include="..\llpeak\imageaux.hpp" />
+    <ClInclude Include="..\llpeak\imagecfg.hpp" />
+    <ClInclude Include="..\llpeak\imageutilf.hpp" />
+    <ClInclude Include="..\llpeak\imageutilm.hpp" />
+    <ClInclude Include="..\llpeak\json.hpp" />
+    <ClInclude Include="..\llpeak\ll_stdhdr.hpp" />
+    <ClInclude Include="..\llpeak\lstring.hpp" />
+    <ClInclude Include="..\llpeak\mapvector.hpp" />
+    <ClInclude Include="..\llpeak\palmapping.hpp" />
+    <ClInclude Include="..\llpeak\ringbuffer.hpp" />
+    <ClInclude Include="..\llpeak\split.hpp" />
+    <ClInclude Include="..\llpeak\swapstream.hpp" />
+    <ClInclude Include="..\llpeak\terminalcolors.hpp" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
@@ -48,26 +87,26 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v142</PlatformToolset>
+    <PlatformToolset>v143</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
