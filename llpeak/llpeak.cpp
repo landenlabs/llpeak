@@ -37,6 +37,7 @@
 #pragma warning( disable : 4291 )
 #endif
 #define _CRT_SECURE_NO_WARNINGS
+#define VERSION "v6.05.01"
 
 // Project files
 #include "CmdBlendF.hpp"
@@ -239,7 +240,7 @@ static std::string& ConvertSpecialChar(std::string& inOut) {
 
 //-------------------------------------------------------------------------------------------------
 void showTitle(char* name) {
-    cerr << "\n" << name << "  Dennis Lang v2.2 (landenlabs.com) " __DATE__ << "\n";
+    cerr << "\n" << name << "  Dennis Lang " VERSION " (landenlabs.com) " __DATE__ << "\n";
 }
 
 //-------------------------------------------------------------------------------------------------
