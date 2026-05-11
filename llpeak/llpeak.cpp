@@ -3,7 +3,7 @@
 //  Desc: "Image manipulation"
 //
 //  llpeak created by Dennis Lang on 12/21/21.
-//  Copyright © 2022 Dennis Lang. All rights reserved.
+//  Copyright © 2026 Dennis Lang. All rights reserved.
 //-------------------------------------------------------------------------------------------------
 //
 // Author: Dennis Lang - 2022
