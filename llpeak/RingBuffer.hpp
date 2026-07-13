@@ -1,3 +1,5 @@
+// Copyright (c) 2026 Dennis Lang
+//
 //
 //  Simple fixed size ring buffer.
 //  Manage objects by value.
