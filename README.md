@@ -1,9 +1,9 @@
 <table border="0">
   <tr>
     <td>
-      <!-- VERSION -->v6.05.11<br>
-      <!-- DATE -->11-May-2026<br>
-      macOS<br>
+      <!-- VERSION -->v6.05.10<br>
+      <!-- DATE -->10-May-2026<br>
+      Win & macOS<br>
       <a href="https://landenlabs.com">Home</a>
     </td>
     <td>
@@ -17,10 +17,16 @@
 # llpeak
 OSX / Linux / DOS  Image blend/dump/palette/shade program.
 
+[![Build status](https://github.com/landenlabs/llpeak/actions/workflows/build.yml/badge.svg)](https://github.com/landenlabs/llpeak/actions/workflows/build.yml)
+
 llpeak parses a json configuration file and processes recursive directories of images applying different image actions:
 * -blend
 * -dump
-* -shade (-shadeXY1 or -shadeXY2)
+* -shade1 (or -shade2)
+* -blur
+* -colorlapse
+* -montage
+* -toGray
 
 
 This input json file:
@@ -179,28 +185,34 @@ This input json file:
 
 Help Banner:
 <pre>
-llpeak  Dennis Lang v2.0 (landenlabs.com) Jan  3 2022
+llpeak  Dennis Lang v6.05.05 (landenlabs.com) Jan  3 2022
 
-Des: 'Image Blend
+Des: 'Image Manipulation
 Use: llpeak [options] directories...   or  files
 
  Options (only first unique characters required, options can be repeated):
 
-   -blend   ; Timelapsed selective image blend
+   -blend   ; Sequenced image blend
    -dump    ; Dump image info, palette, create palette legends
-   -shade   ; Apply shade (2+D) look to image
+   -shade1  ; Apply shade (2+D) look to image (equation #1)
+   -shade2  ; Apply shade (2+D) look to image (equation #2)
+   -blur    ; Blur (smooth) image
+   -colorlapse ; Timelapse color blend
+   -montage ; Merge image tiles together
+   -toGray  ; Convert 32bit gray to 8bit gray
 
-   -config[=]<config.json>   ; Image palette and manipulation configuration
+   -config[=]&lt;config.json&gt;   ; Image palette and manipulation configuration
 
  Generic commands: (all directories recursively scanned)
-   -includefile=<filePattern>
-   -excludefile=<filePattern>
-   -config=<filecfg.json>
+   -includefile=&lt;filePattern&gt;
+   -excludefile=&lt;filePattern&gt;
+   -config &lt;filecfg.json&gt;
    -verbose
 
  Example:
    llpeak -include=\*.png -exclude=Wind\*png -config radar.json ~/data/
    llpeak -config shade.json ~/datapath1/ ~/datapath2/ foo.png car.jpg
    llpeak -dump foo.png
+   llpeak -montage=4x3 -include=\*.png -output=bigImage.png ~/tiles
 
 </pre>
